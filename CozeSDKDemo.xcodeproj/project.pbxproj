@@ -6,8 +6,32 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		9D09AFC52DCC5F2100FB0375 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D09AFC42DCC5F2100FB0375 /* AudioToolbox.framework */; };
+		9D09AFC72DCC5F2B00FB0375 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D09AFC62DCC5F2B00FB0375 /* AVFoundation.framework */; };
+		9D09AFC92DCC5F3300FB0375 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D09AFC82DCC5F3300FB0375 /* CFNetwork.framework */; };
+		9D09AFCB2DCC5F4000FB0375 /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D09AFCA2DCC5F4000FB0375 /* CoreAudio.framework */; };
+		9D09AFCD2DCC5F4700FB0375 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D09AFCC2DCC5F4700FB0375 /* CoreLocation.framework */; };
+		9D09AFCF2DCC5F5500FB0375 /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D09AFCE2DCC5F5500FB0375 /* GLKit.framework */; };
+		9D09AFD12DCC5F5F00FB0375 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D09AFD02DCC5F5F00FB0375 /* SystemConfiguration.framework */; };
+		9D09AFD32DCC5F7400FB0375 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D09AFD22DCC5F7400FB0375 /* CoreTelephony.framework */; };
+		CF4D5C6EDF9AE4D2892C9BB3 /* Pods_CozeSDKDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23BFBC293E608E915B87A7B9 /* Pods_CozeSDKDemo.framework */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
+		23BFBC293E608E915B87A7B9 /* Pods_CozeSDKDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CozeSDKDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5C96387DE26668D4657BDC62 /* Pods-CozeSDKDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CozeSDKDemo.release.xcconfig"; path = "Target Support Files/Pods-CozeSDKDemo/Pods-CozeSDKDemo.release.xcconfig"; sourceTree = "<group>"; };
+		9D09AFC42DCC5F2100FB0375 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		9D09AFC62DCC5F2B00FB0375 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		9D09AFC82DCC5F3300FB0375 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		9D09AFCA2DCC5F4000FB0375 /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = System/Library/Frameworks/CoreAudio.framework; sourceTree = SDKROOT; };
+		9D09AFCC2DCC5F4700FB0375 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		9D09AFCE2DCC5F5500FB0375 /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
+		9D09AFD02DCC5F5F00FB0375 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		9D09AFD22DCC5F7400FB0375 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		9D09AFD42DCC5F9300FB0375 /* BDSclientVoice.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = BDSclientVoice.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9DC82B3C2DC20AA400D7696B /* CozeSDKDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CozeSDKDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		EC89B88143158BDE1DEF6F9D /* Pods-CozeSDKDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CozeSDKDemo.debug.xcconfig"; path = "Target Support Files/Pods-CozeSDKDemo/Pods-CozeSDKDemo.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -36,17 +60,54 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9D09AFCD2DCC5F4700FB0375 /* CoreLocation.framework in Frameworks */,
+				CF4D5C6EDF9AE4D2892C9BB3 /* Pods_CozeSDKDemo.framework in Frameworks */,
+				9D09AFC52DCC5F2100FB0375 /* AudioToolbox.framework in Frameworks */,
+				9D09AFC92DCC5F3300FB0375 /* CFNetwork.framework in Frameworks */,
+				9D09AFCF2DCC5F5500FB0375 /* GLKit.framework in Frameworks */,
+				9D09AFCB2DCC5F4000FB0375 /* CoreAudio.framework in Frameworks */,
+				9D09AFD12DCC5F5F00FB0375 /* SystemConfiguration.framework in Frameworks */,
+				9D09AFD32DCC5F7400FB0375 /* CoreTelephony.framework in Frameworks */,
+				9D09AFC72DCC5F2B00FB0375 /* AVFoundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5187F222762C962ABF20A552 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9D09AFD42DCC5F9300FB0375 /* BDSclientVoice.framework */,
+				9D09AFD22DCC5F7400FB0375 /* CoreTelephony.framework */,
+				9D09AFD02DCC5F5F00FB0375 /* SystemConfiguration.framework */,
+				9D09AFCE2DCC5F5500FB0375 /* GLKit.framework */,
+				9D09AFCC2DCC5F4700FB0375 /* CoreLocation.framework */,
+				9D09AFCA2DCC5F4000FB0375 /* CoreAudio.framework */,
+				9D09AFC82DCC5F3300FB0375 /* CFNetwork.framework */,
+				9D09AFC62DCC5F2B00FB0375 /* AVFoundation.framework */,
+				9D09AFC42DCC5F2100FB0375 /* AudioToolbox.framework */,
+				23BFBC293E608E915B87A7B9 /* Pods_CozeSDKDemo.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7095FD465203DF030A1B5DF4 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				EC89B88143158BDE1DEF6F9D /* Pods-CozeSDKDemo.debug.xcconfig */,
+				5C96387DE26668D4657BDC62 /* Pods-CozeSDKDemo.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		9DC82B332DC20AA400D7696B = {
 			isa = PBXGroup;
 			children = (
 				9DC82B3E2DC20AA400D7696B /* CozeSDKDemo */,
 				9DC82B3D2DC20AA400D7696B /* Products */,
+				7095FD465203DF030A1B5DF4 /* Pods */,
+				5187F222762C962ABF20A552 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -65,6 +126,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9DC82B4F2DC20AA500D7696B /* Build configuration list for PBXNativeTarget "CozeSDKDemo" */;
 			buildPhases = (
+				1A23510BDD28D0F9167306EB /* [CP] Check Pods Manifest.lock */,
 				9DC82B382DC20AA400D7696B /* Sources */,
 				9DC82B392DC20AA400D7696B /* Frameworks */,
 				9DC82B3A2DC20AA400D7696B /* Resources */,
@@ -77,8 +139,6 @@
 				9DC82B3E2DC20AA400D7696B /* CozeSDKDemo */,
 			);
 			name = CozeSDKDemo;
-			packageProductDependencies = (
-			);
 			productName = CozeSDKDemo;
 			productReference = 9DC82B3C2DC20AA400D7696B /* CozeSDKDemo.app */;
 			productType = "com.apple.product-type.application";
@@ -95,6 +155,7 @@
 				TargetAttributes = {
 					9DC82B3B2DC20AA400D7696B = {
 						CreatedOnToolsVersion = 16.3;
+						LastSwiftMigration = 1630;
 					};
 				};
 			};
@@ -127,6 +188,31 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		1A23510BDD28D0F9167306EB /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-CozeSDKDemo-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		9DC82B382DC20AA400D7696B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -140,12 +226,15 @@
 /* Begin XCBuildConfiguration section */
 		9DC82B502DC20AA500D7696B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EC89B88143158BDE1DEF6F9D /* Pods-CozeSDKDemo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = KDV66GVZ86;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = CozeSDKDemo/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -153,14 +242,17 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.zy.CozeSDK.CozeSDKDemo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.zy.voice.agent.VoiceAgent;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "CozeSDKDemo/CozeSDKDemo-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -168,12 +260,15 @@
 		};
 		9DC82B512DC20AA500D7696B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5C96387DE26668D4657BDC62 /* Pods-CozeSDKDemo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = KDV66GVZ86;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = CozeSDKDemo/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -181,14 +276,16 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.zy.CozeSDK.CozeSDKDemo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.zy.voice.agent.VoiceAgent;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "CozeSDKDemo/CozeSDKDemo-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

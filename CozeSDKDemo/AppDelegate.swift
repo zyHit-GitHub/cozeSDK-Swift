@@ -14,7 +14,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        CozeSDK.shared.initialize(token: APIConfig.accessToken, botId: APIConfig.botId,baseURL: APIConfig.baseURL)
+        
+        let window = UIWindow(frame: UIScreen.main.bounds)
+        let rootVC = ViewController()
+        window.rootViewController = UINavigationController(rootViewController: rootVC)
+        window.makeKeyAndVisible()
         return true
+        
     }
 
     // MARK: UISceneSession Lifecycle
