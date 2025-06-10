@@ -29,12 +29,20 @@ public enum CozeOrderType: String, Codable {
 public enum StreamingEvent {
     case chatCreated(CozeChatEvent)
     case chatInProgress(CozeChatEvent)
+    case chatCompleted(CozeChatEvent)
+    case chatFailed(CozeChatEvent)
+    case chatRequiresAction(CozeChatEvent)
+
     case messageDelta(CozeMessageDelta)
     case messageCompleted(CozeMessageDelta)
-    case chatCompleted(CozeChatEvent)
+    case audioDelta(CozeMessageDelta)
+
+    case error(code: Int?, message: String?)
     case done
+
     case unknown(event: String, data: String)
 }
+
 
 public enum CozeMessageType: String, Decodable {
     case question         // 用户输入

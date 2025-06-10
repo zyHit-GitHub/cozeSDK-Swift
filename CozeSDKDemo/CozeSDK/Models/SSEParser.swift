@@ -30,6 +30,7 @@ public class SSEParser {
         for line in lines {
             if line.hasPrefix("event:") {
                 currentEvent = line.replacingOccurrences(of: "event:", with: "").trimmingCharacters(in: .whitespaces)
+                print("currentEvent:\(currentEvent)")
             } else if line.hasPrefix("data:") {
                 let dataLine = line.replacingOccurrences(of: "data:", with: "").trimmingCharacters(in: .whitespaces)
                 currentDataLines.append(dataLine)
@@ -42,6 +43,7 @@ public class SSEParser {
                 currentEvent = ""
                 currentDataLines.removeAll()
             }
+           
         }
 
         if buffer.contains("[DONE]") {
@@ -65,27 +67,53 @@ public class SSEParser {
         }
 
         switch event {
-        case "conversation.chat.created", "conversation.chat.in_progress", "conversation.chat.completed":
+        case "conversation.chat.created":
             if let obj = try? JSONDecoder().decode(CozeChatEvent.self, from: jsonData) {
-                switch event {
-                case "conversation.chat.created": onParsedEvent?(.chatCreated(obj))
-                case "conversation.chat.in_progress": onParsedEvent?(.chatInProgress(obj))
-                case "conversation.chat.completed": onParsedEvent?(.chatCompleted(obj))
-                default: break
-                }
-            } else {
-                onParsedEvent?(.unknown(event: event, data: data))
+                onParsedEvent?(.chatCreated(obj))
             }
 
-        case "conversation.message.delta", "conversation.message.completed":
+        case "conversation.chat.in_progress":
+            if let obj = try? JSONDecoder().decode(CozeChatEvent.self, from: jsonData) {
+                onParsedEvent?(.chatInProgress(obj))
+            }
+
+        case "conversation.chat.completed":
+            if let obj = try? JSONDecoder().decode(CozeChatEvent.self, from: jsonData) {
+                onParsedEvent?(.chatCompleted(obj))
+            }
+
+        case "conversation.chat.failed":
+            if let obj = try? JSONDecoder().decode(CozeChatEvent.self, from: jsonData) {
+                onParsedEvent?(.chatFailed(obj))
+            }
+
+        case "conversation.chat.requires_action":
+            if let obj = try? JSONDecoder().decode(CozeChatEvent.self, from: jsonData) {
+                onParsedEvent?(.chatRequiresAction(obj))
+            }
+
+        case "conversation.message.delta":
             if let obj = try? JSONDecoder().decode(CozeMessageDelta.self, from: jsonData) {
-                switch event {
-                case "conversation.message.delta": onParsedEvent?(.messageDelta(obj))
-                case "conversation.message.completed": onParsedEvent?(.messageCompleted(obj))
-                default: break
-                }
+                onParsedEvent?(.messageDelta(obj))
+            }
+
+        case "conversation.message.completed":
+            if let obj = try? JSONDecoder().decode(CozeMessageDelta.self, from: jsonData) {
+                onParsedEvent?(.messageCompleted(obj))
+            }
+
+        case "conversation.audio.delta":
+            if let obj = try? JSONDecoder().decode(CozeMessageDelta.self, from: jsonData) {
+                onParsedEvent?(.audioDelta(obj))
+            }
+
+        case "error":
+            if let json = try? JSONSerialization.jsonObject(with: jsonData, options: []) as? [String: Any] {
+                let code = json["code"] as? Int
+                let msg = json["msg"] as? String
+                onParsedEvent?(.error(code: code, message: msg))
             } else {
-                onParsedEvent?(.unknown(event: event, data: data))
+                onParsedEvent?(.error(code: nil, message: data))
             }
 
         case "done":
@@ -112,7 +140,8 @@ public class SSEClient {
         url: URL,
         headers: [String: String],
         body: Data,
-        onEvent: @escaping (StreamingEvent) -> Void
+        onEvent: @escaping (StreamingEvent) -> Void,
+        onError: @escaping (Error) -> Void
     ) {
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
@@ -126,8 +155,8 @@ public class SSEClient {
 
         task = session.dataTask(with: request) { [weak self] data, response, error in
             if let error = error {
-                onEvent(.unknown(event: "error", data: error.localizedDescription))
-                return
+               onError(error)
+               return
             }
 
             guard let data = data else {

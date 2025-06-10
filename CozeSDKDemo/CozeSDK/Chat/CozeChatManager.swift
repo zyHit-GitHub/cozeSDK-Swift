@@ -94,7 +94,8 @@ public class CozeChatManager {
             url: url,
             headers: headers,
             body: body,
-            onEvent: onEvent
+            onEvent: onEvent,
+            onError: onError
         )
         self.sseClient = sse
         return sse
